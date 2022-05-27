@@ -3,7 +3,7 @@ Value FLAGS ([R]+)
 Value IP (\S+)
 Value INTERFACE (\S+)
 Value MAC ([0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){5})
-Value STATUS (noarp|incomplete|stale|reachable|delay|probe)
+Value STATUS (noarp|incomplete|stale|reachable|delay|probe|failed)
 
 Start
   ^Flags:.*$$ -> NeighborsTable
