@@ -9,5 +9,5 @@ Start
   ^Flags:.*$$ -> NeighborsTable
 
 NeighborsTable
-  ^\s?${INDEX}\s*(${FLAGS}\s+)?address=${IP}\sinterface=${INTERFACE}\smac-address=${MAC}\sstatus="${STATUS}"\s*?$$ -> Record
+  ^\s*${INDEX}\s*(${FLAGS}\s+)?address=${IP}\s+interface=${INTERFACE}\s+(mac-address=${MAC}\s+)?status="${STATUS}"\s*$$ -> Record
   ^. -> Error
