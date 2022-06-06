@@ -17,5 +17,5 @@ Start
   ^\s*tx-flow-control:\s${tx_flow_control}
   ^\s*rx-flow-control:\s${rx_flow_control}
   ^\s*advertising:\s${advertising}
-  ^\s*link-partner-advertising:\s${link_partner_advertising}
+  ^\s*link-partner-advertising:\s*(${link_partner_advertising})?
   ^. -> Error
