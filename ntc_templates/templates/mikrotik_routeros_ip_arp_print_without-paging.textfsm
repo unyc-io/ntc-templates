@@ -8,5 +8,5 @@ Start
   ^\s+#\s*ADDRESS\s*MAC-ADDRESS\s*INTERFACE\s*$$ -> EntriesTable
 
 EntriesTable
-  ^\s*${index}\s*(${flags})?\s*${ip}\s*(${mac})?\s+(${interface})?\s+$$ -> Record
+  ^\s*${index}\s*(${flags})?\s*${ip}\s*(${mac})?\s+(${interface})?\s*$$ -> Record
   ^. -> Error
