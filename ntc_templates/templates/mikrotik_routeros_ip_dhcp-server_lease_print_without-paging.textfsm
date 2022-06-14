@@ -12,8 +12,8 @@ Start
   ^\s#\s+ADDRESS\s+MAC-ADDRESS\s+HOST-NAME\s+SERVER\s+RATE-LIMIT\s+STATUS\s+LAST-SEEN\s+$$ -> EntriesTable
 
 EntriesTable
-  ^\s*${index}\s+(${rate_limit})?\s+(${status})?\s+(${last_seen})?\s+$$ -> Record
-  ^\s*${index}\s(${flags})?\s{,4}${ip}\s+(${rate_limit})?\s+${status}\s+${last_seen}\s+$$ -> Record
-  ^\s*${index}\s(${flags})?\s{,4}(${ip})?\s+${mac}\s+(${rate_limit})?\s+${status}\s+${last_seen}\s+$$ -> Record
-  ^\s*${index}\s(${flags})?\s{,4}(${ip})?\s+(${mac}|\s{17})\s(${hostname})?\s+(${server})?\s+(${rate_limit})?\s+${status}\s+${last_seen}\s+$$ -> Record
+  ^\s*${index}\s+(${rate_limit})?\s+(${status})?\s+(${last_seen})?\s*$$ -> Record
+  ^\s*${index}\s(${flags})?\s{,4}${ip}\s+(${rate_limit})?\s+${status}\s+${last_seen}\s*$$ -> Record
+  ^\s*${index}\s(${flags})?\s{,4}(${ip})?\s+${mac}\s+(${rate_limit})?\s+${status}\s+${last_seen}\s*$$ -> Record
+  ^\s*${index}\s(${flags})?\s{,4}(${ip})?\s+(${mac}|\s{17})\s(${hostname})?\s+(${server})?\s+(${rate_limit})?\s+${status}\s+${last_seen}\s*$$ -> Record
   ^. -> Error
