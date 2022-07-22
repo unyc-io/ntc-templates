@@ -11,7 +11,7 @@ from ntc_templates.parse import parse_output
 
 def return_test_files():
     """Return a list of all the *.raw files to run tests against."""
-    platform_dirs = glob.glob("tests/*")
+    platform_dirs = glob.glob("tests/mikrotik*")
     platforms = (glob.glob("{0}/*".format(platform)) for platform in platform_dirs)
     template_dirs = (item for sublist in platforms for item in sublist)
     test_commands = (
