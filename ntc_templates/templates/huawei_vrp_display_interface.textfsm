@@ -34,7 +34,8 @@ Start
   ^Modem\sState:\s+\S+\s*$$
   ^Model\s=\s+\S+\s*$$
   ^Current\sNetwork\sConnection\s=\sLTE\(LTE\)\s*$$
-  ^Current\sRSSI\s=\s+(-)?\d+\sdBm\s*$$
+  ^Current\sNetwork\sConnection\s=\sUnknown\s*$$
+  ^Current\sRSSI\s<?=\s+(-)?\d+\sdBm.*$$
   ^Current\sSINR\s=\s+(-)?\d+\sdB\s\(weak\)\s*$$
   ^\s+Input\sbandwidth\sutilization(\sthreshold)?\s*:.*$$
   ^\s+Output\sbandwidth\sutilization(\sthreshold)?\s*:.*$$
