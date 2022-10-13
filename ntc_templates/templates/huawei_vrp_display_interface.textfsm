@@ -1,5 +1,5 @@
 Value Required INTERFACE (\S*)
-Value INTERFACE_STATUS (\S*)
+Value INTERFACE_STATUS (.*)
 Value PROTOCOL_STATUS (\S*|\S*\s+\(\w+\))
 Value INTERFACE_DESCRIPTION (.*)
 Value PORT_TYPE (\S*)
