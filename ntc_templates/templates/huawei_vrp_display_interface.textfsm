@@ -1,0 +1,34 @@
+Value Required INTERFACE (\S*)
+Value INTERFACE_STATUS (\S*)
+Value PROTOCOL_STATUS (\S*|\S*\s+\(\w+\))
+Value INTERFACE_DESCRIPTION (.*)
+Value PORT_TYPE (\S*)
+Value PVID (\d+)
+Value INTERNET_ADDRESS (\S*)
+Value INTERNET_PROTOCOL (disabled|enabled)
+Value HARDWARE_ADDRESS (\S{4}-\S{4}-\S{4})
+Value LAST_PHYSICAL_UP_TIME (\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}|-)
+Value LAST_PHYSICAL_DOWN_TIME (\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}|-)
+Value CURRENT_SYSTEM_TIME (\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2})
+Value PORT_MODE ([\S\s]*)
+Value SPEED (\d*)
+Value LOOPBACK (\S*)
+Value DUPLEX (HALF|FULL)
+Value NEGOTIATION (DISABLE|ENABLE)
+
+Start
+  ^\S*\s+current\s+state\s+:.*$$ -> Continue.Record
+  ^${INTERFACE}\s+current\s+state\s+:\s+${INTERFACE_STATUS}\s*$$
+  ^Line\s+protocol\s+current\s+state\s+:\s+${PROTOCOL_STATUS}\s*$$
+  ^Description:${INTERFACE_DESCRIPTION}\s*$$
+  ^${PORT_TYPE}\s+Port(,\s+PVID\s+:\s*${PVID},)?.*$$
+  ^Internet\s+Address\s+is\s+negotiated,\s+${INTERNET_ADDRESS}\s*$$
+  ^Internet\s+Address\s+is\s+${INTERNET_ADDRESS}\s*$$
+  ^.*,\s+Hardware\s+address\s+is\s+${HARDWARE_ADDRESS}\s*$$
+  ^Internet\s+protocol\s+processing\s+:\s+${INTERNET_PROTOCOL}\s*$$
+  ^Last\s+physical\s+up\s+time\s*:\s+${LAST_PHYSICAL_UP_TIME}\s*
+  ^Last\s+physical\s+down\s+time\s+:\s+${LAST_PHYSICAL_DOWN_TIME}\s*
+  ^Current\s+system\s+time:\s+${CURRENT_SYSTEM_TIME}\s*
+  ^Port\s+Mode:\s+${PORT_MODE}\s*
+  ^Speed\s+:\s+${SPEED},\s*Loopback:\s+${LOOPBACK}\s*
+  ^Duplex:\s+${DUPLEX},\s*Negotiation:\s+${NEGOTIATION}\s*
