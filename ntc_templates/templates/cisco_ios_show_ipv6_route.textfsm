@@ -1,0 +1,15 @@
+Value PROTOCOL (\w{1,4})
+Value NETWORK ([A-Za-z0-9:]+/\d{1,3}(?:/\d{2})?)
+Value DISTANCE (\d+)
+Value METRIC (\d+)
+Value NEXTHOP_IP ([\w\d:]+)
+Value NEXTHOP_IF ([\w\d\s/]+)
+
+
+Start
+  # Match regular ipv6 routes
+  ^Codes:[\d\w\-\s,]*$$ -> Next
+  ^\s{7}[\d\w\-\s,]*$$ -> Next
+  ^${PROTOCOL}\s+${NETWORK}\s+(\[${DISTANCE}/${METRIC}])\s* -> Next
+  ^\s+via\s+${NEXTHOP_IP},\s+${NEXTHOP_IF}\s* -> Record
+  ^.*$$ -> Error
