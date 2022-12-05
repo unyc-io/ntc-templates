@@ -10,3 +10,4 @@
 DAc dst-address=192.168.1.0/24 routing-table=main gateway=bridge-lan immediate-gw=bridge-lan distance=0 scope=10 suppress-hw-offload=no local-address=192.168.1.254%bridge-lan
 DAc dst-address=217.171.23.66/32 routing-table=main gateway=pppoe-out1 immediate-gw=pppoe-out1 distance=0 scope=10 suppress-hw-offload=no local-address=185.87.103.236%pppoe-out1
 DAv dst-address=0.0.0.0/0 routing-table=main pref-src=≈ gateway=pppoe-out1 immediate-gw=pppoe-out1 distance=100 scope=30 target-scope=10 vrf-interface=pppoe-out1 suppress-hw-offload=no
+DAv dst-address=0.0.0.0/0 routing-table=main pref-src= gateway=pppoe-out1 immediate-gw=pppoe-out1 distance=100 scope=30 target-scope=10 vrf-interface=pppoe-out1 suppress-hw-offload=no
