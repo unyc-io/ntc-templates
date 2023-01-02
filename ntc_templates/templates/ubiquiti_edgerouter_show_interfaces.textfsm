@@ -1,0 +1,15 @@
+Value Filldown INTERFACE (\w+)
+Value IP (\S+)
+Value Filldown STATE (\w)
+Value Filldown LINK_STATUS (\w)
+Value Filldown DESCRIPTION ([\w\d\-\s]+)
+
+Start
+  ^[-\s]+ -> Interfaces
+ 
+Interfaces
+  ^${INTERFACE}\s+${IP}\s+(${STATE}/${LINK_STATUS})(\s+${DESCRIPTION})?\s*$$ -> Record
+  ^\s+${IP}\s*$$ -> Record
+  ^. -> Error
+
+EOF
